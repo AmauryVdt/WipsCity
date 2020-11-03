@@ -6,14 +6,20 @@
     <link rel="icon" type="image/png" href="https://e7.pngegg.com/pngimages/879/955/png-clipart-delishop-supermarket-food-online-grocer-logo-super-market-miscellaneous-company.png"/>
     <link rel="stylesheet" href="index.css">
     <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+    <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
 </head>
 <body>
 
-<!--    HEADER  -->
+<!----------    HEADER  ---------->
+
+    <div id="header"></div>
+
+<!----------    CONTANT ---------->
+
+    <div id="containt"></div>
 
 
 
-<!--    CONTANT -->
     <div id="app">
         {{ message }}
     </div>
@@ -25,8 +31,16 @@
         </span>
     </div>
 
-<!--    FOOTER  -->
+<!----------    FOOTER  ---------->
 
+<!-- Permet de load le Header sur l'Index -->
+<script>$("#header").load('Header.html');</script>
+
+<!-- Permet de load le Containt sur l'Index -->
+<script>$("#containt").load('Containt.html');</script>
+
+<!-- Les fonctions JS -->
 <script src="index.js"></script>
+
 </body>
 </html>
