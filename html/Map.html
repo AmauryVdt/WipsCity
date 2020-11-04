@@ -7,6 +7,10 @@
 </head>
 
 <body>
+
+<button onclick="addPicture()">Ajout une image</button>
+<button onclick="addElement()">Ajout un element</button>
+
     <div id="container">
         <div id="ground-left">&nbsp;</div>
         <div id="ground">
@@ -26,22 +30,64 @@
     </div>
 
     <div id="holder">
-        <div class="bloc" id="commerce"><img></div>
+        <div class="bloc" id="commerce"></div>
         <hr class="separateur">
-        <div class="bloc" id="maison"><img></div>
+        <div class="bloc" id="maison"></div>
         <hr class="separateur">
-        <div class="bloc" id="appartement"><img></div>
+        <div class="bloc" id="appartement"></div>
         <hr class="separateur">
-        <div class="bloc" id="eolienes"><img></div>
+        <div class="bloc" id="eolienes"></div>
         <hr class="separateur">
-        <div class="bloc" id="hydraulique"><img></div>
+        <div class="bloc" id="hydraulique"></div>
         <hr class="separateur">
-        <div class="bloc" id="solaire"><img></div>
+        <div class="bloc" id="solaire"></div>
         <hr class="separateur">
-        <div class="bloc" id="ecole"><img></div>
+        <div class="bloc" id="ecole"></div>
         <hr class="separateur">
-        <div class="bloc" id="industrie"><img></div>
+        <div class="bloc" id="industrie"></div>
     </div>
+
+
+    <script>
+
+        function addElement () {
+            // crée un nouvel élément div
+            var newDiv = document.createElement("div");
+            // et lui donne un peu de contenu
+            var newContent = document.createTextNode('Hi there and greetings!');
+            // ajoute le nœud texte au nouveau div créé
+            newDiv.appendChild(newContent);
+
+            // ajoute le nouvel élément créé et son contenu dans le DOM
+            var currentDiv = document.getElementById('div1');
+            document.body.insertBefore(newDiv, currentDiv);
+        }
+
+        function addPicture() {
+            var img = document.createElement("img");
+            img.src = "matplotlib-grid-02.png";
+
+            var div = document.getElementById("x");
+            div.appendChild(img);
+        }
+
+
+        function allowDrop(ev) {
+            ev.preventDefault();
+        }
+
+        function drag(ev) {
+            ev.dataTransfer.setData("text", ev.target.id);
+        }
+
+        function drop(ev) {
+            ev.preventDefault();
+            var data = ev.dataTransfer.getData("text");
+            ev.target.appendChild(document.getElementById(data));
+        }
+    </script>
+
+
 </body>
 
 </html>
