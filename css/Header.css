@@ -1,7 +1,34 @@
-.headerLocation
-{
+body{
+    margin: 0;
+}
+
+#menu{
+    position: absolute;
+    top: 80px;
+    display: flex;
+    flex-direction: column;
     width: 100%;
-    height: 80px;
+    height: auto;
+    transition-duration: 0.5s;
+    transform: translateY(-250px);
+}
+
+#menu.show{
+    transition-duration: 0.5s;
+    transform: translateY(0px);
+    box-shadow: 0 40px 40px -40px black;
+}
+
+#menu>a{
+    background-color: rgb(56, 184, 135);
+    font-size: 1.4em;
+    color: white;
+    padding-left: 50px;
+}
+
+#menu>a:hover{
+    color: greenyellow;
+    transition-duration: 0.5s;
 }
 
 .headerContent
@@ -50,6 +77,35 @@
     width: 100%;
     height: 80px;
     position: absolute;
-    top: 0;
-    left: 0;
+    top: 0px;
+    left: 0px;
+}
+
+#before-starting{
+    position: absolute;
+    top: 80px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+#before-starting>div{
+    margin-top: 4%;
+    margin-bottom: 4%;
+}
+
+#eco-urb{
+    border: 2px solid black;
+    width: 60%;
+    height: 500px;
+}
+
+#bienvenue-wips{
+    border: 2px solid rgb(56, 133, 184);
+    width: 60%;
+    height: 500px;
+    margin-left: 350px;
 }
