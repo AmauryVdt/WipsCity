@@ -54,10 +54,38 @@ body{
     position: absolute;
 }
 
-#tile{
+.tile{
     margin: auto;
     width: 130px;
     height: 130px;
     border: 1px dashed white;
     border-radius: 15px;
-} 
+}
+
+#holder{
+    border: 3px solid lightgreen;
+    background-color: whitesmoke;
+    border-radius: 25px;
+    position: absolute;
+    bottom: 20px;
+    height: 200px;
+    width: 70%;
+    left: 15%;
+    right: 15%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.separateur{
+    border: 0.5px solid black;
+    width: 10%;
+    margin-top: 20%;
+    margin-bottom: 20%;
+    transform: rotate(90deg);
+}
+
+.bloc{
+    margin: auto;
+}
