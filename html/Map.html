@@ -1,27 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="../css/Map.css">
-    <title>Title</title>
-</head>
-<body>
-
-<style>
-    #div1 {
-        width: 350px;
-        height: 70px;
-        padding: 10px;
-        border: 1px solid #aaaaaa;
-    }
-</style>
-
-<button onclick="addPicture()">Ajout une image</button>
-
-<img id="drag1" src="../images/Aimez_la_Nature2.png" draggable="true" ondragstart="drag(event)">
-<div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-
-
+<link rel="stylesheet" href="../css/Map.css">
 
     <div id="container">
         <div id="ground-left">&nbsp;</div>
@@ -42,39 +19,42 @@
     </div>
 
     <div id="holder">
-        <div  class="bloc" id="commerce"><img id="drag2" src="../images/Aimez_la_Nature2.png" draggable="true" ondragstart="drag(event)"></div>
+        <div  class="bloc" id="commerce">
+            <img id="commercePicture0" src="../images/Aimez_la_Nature2.png" draggable="true" ondragstart="drag(event)">
+        </div>
         <hr class="separateur">
-        <div class="bloc" id="maison"></div>
+        <div class="bloc" id="maison">
+            <img id="maisonPicture0" src="../images/Aimez_la_Nature2.png" draggable="true" ondragstart="drag(event)">
+        </div>
         <hr class="separateur">
-        <div class="bloc" id="appartement"></div>
+        <div class="bloc" id="appartement">
+            <img id="appartementPicture0" src="../images/Aimez_la_Nature2.png" draggable="true" ondragstart="drag(event)">
+        </div>
         <hr class="separateur">
-        <div class="bloc" id="eolienes"></div>
+        <div class="bloc" id="eoliene">
+            <img id="eolienePicture0" src="../images/Aimez_la_Nature2.png" draggable="true" ondragstart="drag(event)">
+        </div>
         <hr class="separateur">
-        <div class="bloc" id="hydraulique"></div>
+        <div class="bloc" id="hydraulique">
+            <img id="hydrauliquePicture0" src="../images/Aimez_la_Nature2.png" draggable="true" ondragstart="drag(event)">
+        </div>
         <hr class="separateur">
-        <div class="bloc" id="solaire"></div>
+        <div class="bloc" id="solaire">
+            <img id="solairePicture0" src="../images/Aimez_la_Nature2.png" draggable="true" ondragstart="drag(event)">
+        </div>
         <hr class="separateur">
-        <div class="bloc" id="ecole"></div>
+        <div class="bloc" id="ecole">
+            <img id="ecolePicture0" src="../images/Aimez_la_Nature2.png" draggable="true" ondragstart="drag(event)">
+        </div>
         <hr class="separateur">
-        <div class="bloc" id="industrie"></div>
+        <div class="bloc" id="industrie">
+            <img id="industriePicture0" src="../images/Aimez_la_Nature2.png" draggable="true" ondragstart="drag(event)">
+        </div>
     </div>
 
 
     <script>
-
-        function addPicture() {
-
-            if (document.getElementById("commerce").childElementCount < 1) {
-                var img = document.createElement("img");
-                img.id = "commercePicture";
-                img.src = "../images/Aimez_la_Nature2.png";
-                img.draggable = "true";
-                this.addEventListener('dragstart', function() {drag(event)}, false);
-
-                var div = document.getElementById("commerce");
-                div.appendChild(img);}
-        }
-
+        window.onload = addPicture();
 
         function allowDrop(ev) {
             ev.preventDefault();
@@ -88,10 +68,108 @@
             ev.preventDefault();
             var data = ev.dataTransfer.getData("text");
             ev.target.appendChild(document.getElementById(data));
+            addPicture();
+        }
+
+        // Merci de ne pas juger le code à partir d'ici, j'avais la flemme de faire un beau code
+
+        var countCommercePicture,
+            countMaisonPicture,
+            countAppartementPicture,
+            countEolienePicture,
+            countHydrauliquePicture,
+            countSolairePicture,
+            countEcolePicture,
+            countIndustriePicture  = 1;
+
+        function addPicture() {
+            if (document.getElementById("commerce").childElementCount < 1) {
+                const img = document.createElement("img");
+                img.id = `maisonPicture${countCommercePicture}`;
+                img.src = "../images/Aimez_la_Nature2.png";
+                img.draggable = "true";
+                this.addEventListener('dragstart', function() {drag(event)}, false);
+
+                const div = document.getElementById("commerce");
+                div.appendChild(img);
+                countCommercePicture++;
+            }
+            else if (document.getElementById("maison").childElementCount < 1) {
+                const img = document.createElement("img");
+                img.id = `maisonPicture${countMaisonPicture}`;
+                img.src = "../images/Aimez_la_Nature2.png";
+                img.draggable = "true";
+                this.addEventListener('dragstart', function() {drag(event)}, false);
+
+                const div = document.getElementById("maison");
+                div.appendChild(img);
+                countMaisonPicture++;
+            }
+            else if (document.getElementById("appartement").childElementCount < 1) {
+                const img = document.createElement("img");
+                img.id = `maisonAppartement${countAppartementPicture}`;
+                img.src = "../images/Aimez_la_Nature2.png";
+                img.draggable = "true";
+                this.addEventListener('dragstart', function() {drag(event)}, false);
+
+                const div = document.getElementById("appartement");
+                div.appendChild(img);
+                countAppartementPicture++;
+            }
+            else if (document.getElementById("eoliene").childElementCount < 1) {
+                const img = document.createElement("img");
+                img.id = `maisonEoliene${countEolienePicture}`;
+                img.src = "../images/Aimez_la_Nature2.png";
+                img.draggable = "true";
+                this.addEventListener('dragstart', function() {drag(event)}, false);
+
+                const div = document.getElementById("eoliene");
+                div.appendChild(img);
+                countEolienePicture++;
+            }
+            else if (document.getElementById("hydraulique").childElementCount < 1) {
+                const img = document.createElement("img");
+                img.id = `maisonHydraulique${countHydrauliquePicture}`;
+                img.src = "../images/Aimez_la_Nature2.png";
+                img.draggable = "true";
+                this.addEventListener('dragstart', function() {drag(event)}, false);
+
+                const div = document.getElementById("hydraulique");
+                div.appendChild(img);
+                countHydrauliquePicture++;
+            }
+            else if (document.getElementById("solaire").childElementCount < 1) {
+                const img = document.createElement("img");
+                img.id = `maisonSolaire${countSolairePicture}`;
+                img.src = "../images/Aimez_la_Nature2.png";
+                img.draggable = "true";
+                this.addEventListener('dragstart', function() {drag(event)}, false);
+
+                const div = document.getElementById("solaire");
+                div.appendChild(img);
+                countSolairePicture++;
+            }
+            else if (document.getElementById("ecole").childElementCount < 1) {
+                const img = document.createElement("img");
+                img.id = `maisonEcole${countEcolePicture}`;
+                img.src = "../images/Aimez_la_Nature2.png";
+                img.draggable = "true";
+                this.addEventListener('dragstart', function() {drag(event)}, false);
+
+                const div = document.getElementById("ecole");
+                div.appendChild(img);
+                countEcolePicture++;
+            }
+            else if (document.getElementById("industrie").childElementCount < 1) {
+                const img = document.createElement("img");
+                img.id = `maisonIndustrie${countIndustriePicture}`;
+                img.src = "../images/Aimez_la_Nature2.png";
+                img.draggable = "true";
+                this.addEventListener('dragstart', function() {drag(event)}, false);
+
+                const div = document.getElementById("industrie");
+                div.appendChild(img);
+                countIndustriePicture++;
+            }
         }
     </script>
-
-
-</body>
-
-</html>
