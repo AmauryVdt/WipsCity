@@ -5,32 +5,44 @@
     <link rel="stylesheet" href="../css/Map.css">
     <title>Title</title>
 </head>
-
 <body>
 
+<style>
+    #div1 {
+        width: 350px;
+        height: 70px;
+        padding: 10px;
+        border: 1px solid #aaaaaa;
+    }
+</style>
+
 <button onclick="addPicture()">Ajout une image</button>
-<button onclick="addElement()">Ajout un element</button>
+
+<img id="drag1" src="../images/Aimez_la_Nature2.png" draggable="true" ondragstart="drag(event)">
+<div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+
 
     <div id="container">
         <div id="ground-left">&nbsp;</div>
         <div id="ground">
             <div id="tile-container">
-                <div class="tile" id="t1"></div>
-                <div class="tile" id="t2"></div>
-                <div class="tile" id="t3"></div>
-                <div class="tile" id="t4"></div>
-                <div class="tile" id="t5"></div>
-                <div class="tile" id="t6"></div>
-                <div class="tile" id="t7"></div>
-                <div class="tile" id="t8"></div>
-                <div class="tile" id="t9"></div>
+                <div class="tile" id="t1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                <div class="tile" id="t2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                <div class="tile" id="t3" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                <div class="tile" id="t4" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                <div class="tile" id="t5" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                <div class="tile" id="t6" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                <div class="tile" id="t7" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                <div class="tile" id="t8" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                <div class="tile" id="t9" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
             </div>
         </div>
         <div id="ground-right">&nbsp;</div>
     </div>
 
     <div id="holder">
-        <div class="bloc" id="commerce"></div>
+        <div  class="bloc" id="commerce"><img id="drag2" src="../images/Aimez_la_Nature2.png" draggable="true" ondragstart="drag(event)"></div>
         <hr class="separateur">
         <div class="bloc" id="maison"></div>
         <hr class="separateur">
@@ -50,25 +62,17 @@
 
     <script>
 
-        function addElement () {
-            // crée un nouvel élément div
-            var newDiv = document.createElement("div");
-            // et lui donne un peu de contenu
-            var newContent = document.createTextNode('Hi there and greetings!');
-            // ajoute le nœud texte au nouveau div créé
-            newDiv.appendChild(newContent);
-
-            // ajoute le nouvel élément créé et son contenu dans le DOM
-            var currentDiv = document.getElementById('div1');
-            document.body.insertBefore(newDiv, currentDiv);
-        }
-
         function addPicture() {
-            var img = document.createElement("img");
-            img.src = "matplotlib-grid-02.png";
 
-            var div = document.getElementById("x");
-            div.appendChild(img);
+            if (document.getElementById("commerce").childElementCount < 1) {
+                var img = document.createElement("img");
+                img.id = "commercePicture";
+                img.src = "../images/Aimez_la_Nature2.png";
+                img.draggable = "true";
+                this.addEventListener('dragstart', function() {drag(event)}, false);
+
+                var div = document.getElementById("commerce");
+                div.appendChild(img);}
         }
 
 
