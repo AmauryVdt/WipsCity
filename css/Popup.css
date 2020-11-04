@@ -1,20 +1,21 @@
 .Popup
 {
-    height: 70%;
-    Width: 70%;
-    background-color:rgb(90, 207, 143);
+    height: 60%;
+    Width: 30%;
+    background-color:rgb(127, 250, 171);
     display: flex;
     position: absolute;
     flex-direction: column;
     text-align: center;
-    padding: 0 10%;
+    padding: 0 5%;
     justify-content: space-around;
-    border-radius: 5px;
+    border-radius: 25px;
 }
 
 .Popup>p
 {
     color: white;
+    font-size: 1.2em;
     font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -27,22 +28,24 @@
 
 .PopupContainer>div>img
 {
-    width: 50%;
+    width: 80%;
 }
 
-.PopupContainer>div:nth-child(2)
-{
-    min-width: 10%;
-}
 
 .Popup>div>button
 {
-    color: rgb(19, 138, 92);
+    color: rgb(56, 184, 135);
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 1.2em;
+    font-size: 1.0em;
     font-weight: bold;
     border-color: rgb(56, 184, 135);
     border-radius: 4px;
+    border-style: solid;
     padding: 10px 25px;
+}
+
+.Popup>div>button:hover
+{
+    cursor: pointer;
 }
 
