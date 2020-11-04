@@ -13,6 +13,11 @@ function drop(ev) {
     var data = ev.dataTransfer.getData("text");
     ev.target.appendChild(document.getElementById(data));
     addPicture();
+
+    if (ev.target === document.getElementById("trash")) {
+        var img = document.getElementById(data);
+        img.parentNode.removeChild(img);
+    }
 }
 
 // Merci de ne pas juger le code à partir d'ici, j'avais la flemme de faire un beau code

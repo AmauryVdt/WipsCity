@@ -85,7 +85,10 @@ body{
     margin-bottom: 20%;
     transform: rotate(90deg);
 }
-
+.fa-trash-alt{
+    margin-top: 120%;
+    margin-left: 200%;
+}
 .bloc{
     margin: auto;
 }
