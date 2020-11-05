@@ -28,7 +28,7 @@ body{
 }
 
 #menu>a:hover{
-    color: greenyellow;
+    /*color: greenyellow;*/
     transition-duration: 0.5s;
 }
 
@@ -46,6 +46,7 @@ body{
     padding: 10px 30px;
     font-size: 1.4em;
     transition-duration: 0.5s;
+    font-family: "Montserrat", serif;
 }
 
 .headerContent span:hover
@@ -67,9 +68,14 @@ body{
 
 .headerContent span:last-child:hover
 {
-    background-color: greenyellow;
+    /*background-color: greenyellow;*/
     transition-duration: 0.5s;
     transform:scale(1.2);
+}
+
+.headerContent a {
+    text-decoration: none;
+    color: rgb(56, 184, 135);
 }
 
 .header
