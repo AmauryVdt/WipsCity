@@ -11,7 +11,9 @@ body{
     position: relative;
     width: 500px;
 }
-
+.tile>img{
+    transform: rotate(45deg);
+}
 #ground{
     height: 500px;
     line-height: 100px;
