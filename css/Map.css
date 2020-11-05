@@ -13,9 +13,6 @@ body{
     width: 500px;
     height: 600px;
 }
-.tile>img{
-    transform: rotate(45deg);
-}
 #ground{
     height: 500px;
     line-height: 100px;
